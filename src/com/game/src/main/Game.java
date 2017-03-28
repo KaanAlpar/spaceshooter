@@ -174,6 +174,11 @@ public class Game extends Canvas implements Runnable {
 		g.drawImage(background, 0, 0, null);
 
 		if(State == STATE.GAME){
+			Font fnt0 = new Font("arial", Font.BOLD, 10);
+			g.setFont(fnt0);
+			g.setColor(Color.white);
+			g.drawString("Made by Kaan Alpar - 2017", Game.WIDTH * Game.SCALE - 130, Game.HEIGHT * Game.SCALE);
+			
 			c.render(g);
 			p.render(g);
 			
@@ -186,7 +191,7 @@ public class Game extends Canvas implements Runnable {
 			g.setColor(Color.white);
 			g.drawRect(5, 5, 200, 50);
 			
-			Font fnt0 = new Font("arial", Font.BOLD, 20);
+			fnt0 = new Font("arial", Font.BOLD, 20);
 			g.setFont(fnt0);
 			g.setColor(Color.white);
 			g.drawString("Score: ", Game.WIDTH - 100, 25);

@@ -4,6 +4,8 @@ import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import com.game.src.main.Game.STATE;
+
 public class MouseInput implements MouseListener {
 
 	@Override
@@ -49,6 +51,10 @@ public class MouseInput implements MouseListener {
 				// pressed quit button
 				System.exit(1);
 			}
+		}
+	
+		if(Game.State == STATE.QUIT_MENU){
+			System.exit(0);
 		}
 	}
 
