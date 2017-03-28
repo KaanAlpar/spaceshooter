@@ -3,6 +3,7 @@ package com.game.src.main;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
+import com.game.src.main.Game.STATE;
 import com.game.src.main.classes.EntityA;
 import com.game.src.main.classes.EntityB;
 import com.game.src.main.libs.Animation;
@@ -47,7 +48,7 @@ public class Player extends GameObject implements EntityA {
 				c.removeEntity(tempEnt);
 				game.setEnemy_killed(game.getEnemy_killed() + 1);
 				if (Game.HEALTH <= 0) {
-					System.exit(1);
+					Game.State = STATE.QUIT_MENU;
 				}
 			}
 		}

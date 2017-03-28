@@ -41,6 +41,7 @@ public class Game extends Canvas implements Runnable {
 	private Controller c;
 	private Textures tex;
 	private Menu menu;
+	private QuitMenu qmenu;
 	
 	public LinkedList<EntityA> ea;
 	public LinkedList<EntityB> eb;
@@ -50,7 +51,8 @@ public class Game extends Canvas implements Runnable {
 	
 	public static enum STATE{
 		MENU,
-		GAME
+		GAME,
+		QUIT_MENU
 	};
 	public static STATE State = STATE.MENU;
 	
@@ -70,6 +72,7 @@ public class Game extends Canvas implements Runnable {
 		c = new Controller(tex, this);
 		p = new Player(Game.WIDTH / 2 * Game.SCALE - 32, Game.HEIGHT * Game.SCALE, tex, this, c);
 		menu = new Menu();
+		qmenu = new QuitMenu();
 		
 		ea = c.getEntityA();
 		eb = c.getEntityB();
@@ -192,6 +195,8 @@ public class Game extends Canvas implements Runnable {
 			
 		} else if(State == STATE.MENU){
 			menu.render(g);
+		} else if(State == STATE.QUIT_MENU){
+			qmenu.render(g);
 		}
 		
 		//////////////////////////////////

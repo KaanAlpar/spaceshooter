@@ -25,6 +25,11 @@ public class Menu {
 		g.drawString("Play", playButton.x + 19, playButton.y + 35);
 		g.drawString("Help", helpButton.x + 19, helpButton.y + 35);
 		g.drawString("Quit", quitButton.x + 19, quitButton.y + 35);
+		
+		fnt1 = new Font("arial", Font.BOLD, 10);
+		g.setFont(fnt1);
+		g.drawString("Made by Kaan Alpar - 2017", Game.WIDTH * Game.SCALE - 130, Game.HEIGHT * Game.SCALE);
+		
 		g2d.draw(playButton);
 		g2d.draw(helpButton);
 		g2d.draw(quitButton);
