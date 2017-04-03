@@ -183,13 +183,13 @@ public class Game extends Canvas implements Runnable {
 			p.render(g);
 			
 			g.setColor(Color.gray);
-			g.fillRect(5, 5, 200, 50);
+			g.fillRect(5, 5, 200, 25);
 			
- 			g.setColor(Color.green);
-			g.fillRect(5, 5, HEALTH, 50);
+ 			g.setColor(Color.blue);
+			g.fillRect(5, 5, HEALTH, 25);
 			
 			g.setColor(Color.white);
-			g.drawRect(5, 5, 200, 50);
+			g.drawRect(5, 5, 200, 25);
 			
 			fnt0 = new Font("arial", Font.BOLD, 20);
 			g.setFont(fnt0);
@@ -237,16 +237,16 @@ public class Game extends Canvas implements Runnable {
 		int key = e.getKeyCode();
 		
 		if(State == STATE.GAME){
-			if(key == KeyEvent.VK_RIGHT) {
+			if(key == KeyEvent.VK_RIGHT && p.getVelX() > 0) {
 				p.setVelX(0);
 			} 
-			if(key == KeyEvent.VK_LEFT) {
+			if(key == KeyEvent.VK_LEFT && p.getVelX() < 0) {
 				p.setVelX(0);
 			} 
-			if(key == KeyEvent.VK_UP) {
+			if(key == KeyEvent.VK_UP && p.getVelY() < 0) {
 				p.setVelY(0);
 			} 
-			if(key == KeyEvent.VK_DOWN) {
+			if(key == KeyEvent.VK_DOWN && p.getVelY() > 0) {
 				p.setVelY(0);
 			}
 			if(key == KeyEvent.VK_SPACE){
